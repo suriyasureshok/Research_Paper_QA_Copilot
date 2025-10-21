@@ -1,0 +1,11 @@
+pandas
+feedparser
+requests
+pymupdf
+semantic-chunkers
+datasets
+semantic-router
+sentence-transformers
+qdrant-client
+google-generativeai
+streamlit
