@@ -27,6 +27,9 @@ A comprehensive AI-powered tool for collecting research papers from arXiv, proce
 
 ## Architecture
 
+### Diagram
+
+![Research Paper QA Copilot Architecture](Research_Paper_QA_Copilot/Architecture/architecture_diagram.png)
 The system follows a Retrieval-Augmented Generation (RAG) pattern:
 
 1. **Data Ingestion Pipeline**:
@@ -56,36 +59,21 @@ The system follows a Retrieval-Augmented Generation (RAG) pattern:
 ### Setup Steps
 
 1. **Clone the repository**:
-   `bash
+   ```bash
    git clone https://github.com/suriyasureshok/Research_Paper_QA_Copilot.git
    cd Research_Paper_QA_Copilot
-   `
+   ```
 
-2. **Create a virtual environment**:
-   `bash
-   python -m venv paper-qa
-   `
-
-3. **Activate the virtual environment**:
-   - Windows:
-     `bash
-     .\paper-qa\Scripts\activate
-     `
-   - macOS/Linux:
-     `bash
-     source paper-qa/bin/activate
-     `
-
-4. **Install dependencies**:
-   `bash
+2. **Install dependencies**:
+   ```bash
    pip install -r requirements.txt
-   `
+   ```
 
-5. **Set up environment variables**:
+3. **Set up environment variables**:
    Create a .env file in the root directory:
-   `
+   ```
    GEMINI_API_KEY=your_gemini_api_key_here
-   `
+   ```
 
    Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey).
 
@@ -127,7 +115,7 @@ The system follows a Retrieval-Augmented Generation (RAG) pattern:
 
 You can also test individual components:
 
-`python
+```python
 # Test paper collection
 from src.data_ingestion.paper_collector import ArxivPaperCollection
 collector = ArxivPaperCollection()
@@ -147,7 +135,7 @@ store.add_chunks(chunks)
 from src.chat.gemini_client import GeminiQAHandler
 handler = GeminiQAHandler("your_api_key", store)
 answer = handler.answer_question("What is machine learning?")
-`
+```
 
 ## How It Works
 
@@ -202,12 +190,12 @@ Key dependencies include:
 - sentence-transformers: Embedding generation
 - google-generativeai: Gemini LLM integration
 - semantic-chunkers: Intelligent text chunking
-- eedparser: arXiv API integration
+- feedparser: arXiv API integration
 - PyMuPDF: PDF text extraction
 - python-dotenv: Environment variable management
 
 See 
-equirements.txt for complete list.
+requirements.txt for complete list.
 
 ## License
 
@@ -232,4 +220,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-Built with  for researchers and AI enthusiasts.
+Built with ❤️ for researchers and AI enthusiasts.
