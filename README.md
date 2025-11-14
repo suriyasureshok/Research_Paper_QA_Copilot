@@ -29,7 +29,7 @@ A comprehensive AI-powered tool for collecting research papers from arXiv, proce
 
 ### Diagram
 
-![Research Paper QA Copilot Architecture](Research_Paper_QA_Copilot/Architecture/Res_QA.png)
+![Research Paper QA Copilot Architecture](Architecture/Res_QA.png)
 The system follows a Retrieval-Augmented Generation (RAG) pattern:
 
 1. **Data Ingestion Pipeline**:
