@@ -26,7 +26,7 @@ class ArxivPaperCollection:
         papers = []
         
         for entry in feed.entries:
-            pdf_link = next((link.href for link in entry.links if link.type == 'application/pdf'), None)
+            pdf_link = next((link.href for link in entry.links if 'pdf' in link.href), None)
             full_text = ""
             if pdf_link:
                 try:
@@ -35,11 +35,13 @@ class ArxivPaperCollection:
                     pdf_document = fitz.open(stream=pdf_response.content, filetype="pdf")
                     full_text = ""
                     for page in pdf_document:
-                        full_text += page.get_text()
+                        page_text = page.get_text()
+                        full_text += page_text
                     pdf_document.close()
+                    # Successfully extracted text
                 except Exception as e:
                     print(f"Error extracting text from {pdf_link}: {e}")
-                    full_text = "Error extracting text."
+                    full_text = ""
             
             paper = {
                 'id': entry.id,

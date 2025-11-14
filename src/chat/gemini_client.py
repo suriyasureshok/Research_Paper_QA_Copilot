@@ -9,7 +9,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 class GeminiQAHandler:
     def __init__(self, api_key, datastore):
         genai.configure(api_key=api_key)
-        self.model = genai.GenerativeModel('gemini-2.0-flash-exp')
+        self.model = genai.GenerativeModel('gemini-2.5-flash-lite')
         self.datastore = datastore
 
     def answer_question(self, question, limit=5):
